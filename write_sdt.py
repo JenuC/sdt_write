@@ -9,7 +9,7 @@ import numpy as np
 with open('badger.dat','rb') as fid:
     binary_data=np.fromstring(fid.read(),np.uint16)    
 
-phantom_data= binary_data.ravel().astype(np.uint16)
+#phantom_data= binary_data.ravel().astype(np.uint16)
     
 with open('sdtheader.dat','rb') as fid:
     header_=fid.read() # prebuilt header_file for all 256x256 files
