@@ -11,10 +11,10 @@ with open('badger.dat','rb') as fid:
 
 #phantom_data= binary_data.ravel().astype(np.uint16)
     
-with open('sdtheader.dat','rb') as fid:
+with open('header.dat','rb') as fid:
     header_=fid.read() # prebuilt header_file for all 256x256 files
 
-phantom_data=''.join([header_,binary_data.tobytes()])
+phantom_data=header_+binary_data.tobytes()
 
 with open('phantom_data.sdt','wb') as fid:
     fid.write(phantom_data)
